@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPB ARARUNA</title>
+    <link rel="icon" href="favicon.png" type="image/png"> <!-- Link para o favicon -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo {
+            display: block;
+            margin: 0 auto;
+            max-width: 200px; /* Ajuste o tamanho conforme necessário */
+        }
+        .menu {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .menu button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #eb7c2d; /* Laranja */
+            color: white;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .menu button:hover {
+            background-color: #d66a2d; /* Laranja escuro */
+            transform: translateY(-2px);
+        }
+        #dataAtual {
+            font-size: 18px;
+            margin: 20px 0;
+            font-weight: bold;
+            text-align: center;
+            color: #333;
+        }
+        #navegar {
+            color: #1E88E5; /* Azul */
+            text-decoration: underline;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 14px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            overflow: hidden; /* Adicionado para bordas arredondadas */
+        }
+        th, td {
+            border: 1px solid #d0d0d0;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #eaeaea;
+        }
+        .sim {
+            background-color: #4CAF50; /* Verde para linhas com "SIM" */
+        }
+        .highlight {
+            background-color: #eb7c2d; /* Laranja para a linha da data atual */
+            color: white; /* Texto em branco para melhor contraste */
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1><img src="logo.png" alt="Logo" class="logo"></h1> <!-- Logo no topo -->
+    <div class="menu">
+        <button onclick="showEscalas()">Escalas</button>
+        <button onclick="showRedesSociais()">Redes Sociais</button>
+    </div>
+    <div id="dataAtual"></div> <!-- Div para exibir a data atual -->
+    <div id="excelContainer" class="hidden">
+        <!-- A tabela será inserida aqui dinamicamente -->
+    </div>
+    <div id="redesSociais" class="hidden">
+        <h2>Redes Sociais</h2>
+        <p>Aqui você pode colocar informações sobre suas redes sociais.</p>
+        <!-- Adicione mais conteúdo sobre redes sociais conforme necessário -->
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script>
+        let jsonData = []; // Para armazenar os dados da planilha
+        let currentDate; // Para armazenar a data atual
+
+        // Função para formatar datas corretamente
+        function formatExcelDate(excelDate) {
+            const date = new Date((excelDate - (25567 + 1)) * 86400 * 1000);
+            return date.toLocaleDateString('pt-BR'); // Formato: dd/mm/yyyy
+        }
+
+        // Função para carregar e exibir a planilha Excel
+        function loadExcel() {
+            const excelContainer = document.getElementById('excelContainer');
+            const dataAtualDiv = document.getElementById('dataAtual');
+            const filePath = 'Book1.xlsx'; // Caminho do arquivo Excel
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', filePath, true);
+            xhr.responseType = 'arraybuffer';
+
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    const data = new Uint8Array(xhr.response);
+                    const workbook = XLSX.read(data, { type: 'array' });
+
+                    const firstSheetName = workbook.SheetNames[0];
+                    const worksheet = workbook.Sheets[firstSheetName];
+
+                    jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+                    // Definindo a data atual
+                    currentDate = new Date();
+                    const currentDateFormatted = currentDate.toLocaleDateString('pt-BR'); // Formato: dd/mm/yyyy
+                    dataAtualDiv.innerHTML = `Data Atual: ${currentDateFormatted} <span id="navegar">Navegar até a data de hoje</span>`;
+                    document.getElementById('navegar').onclick = () => navigateToDate(currentDate); // Adiciona evento de clique
+
+                    // Criar a tabela HTML dinamicamente
+                    let table = '<table>';
+                    table += '<thead><tr>';
+                    
+                    // Define apenas os cabeçalhos desejados
+                    const headers = ['Data', 'Diaconia', 'Cafezinho', 'Culto Infantil', 'Ceia'];
+                    headers.forEach(header => {
+                        table += `<th>${header}</th>`;
+                    });
+                    table += '</tr></thead><tbody>';
+
+                    jsonData.slice(1).forEach((row) => {
+                        // Verifica se a linha deve ser verde
+                        const isSimRow = row.some(cell => cell === 'SIM');
+                        const rowClass = isSimRow ? 'sim' : '';
+
+                        // Formatar data da célula
+                        const formattedDate = formatExcelDate(row[0]) || '';
+                        const isCurrent = isCurrentDate(formattedDate); // Verifica se a data é a atual
+
+                        table += `<tr class="${rowClass} ${isCurrent ? 'highlight' : ''}">`; // Adiciona a classe 'sim' se a linha contiver 'SIM'
+
+                        // Inclui as colunas desejadas
+                        table += `<td>${formattedDate}</td>`; // Data
+                        table += `<td>${row[1] || ''}</td>`; // Diaconia
+                        table += `<td>${row[2] || ''}</td>`; // Cafezinho
+                        table += `<td>${row[3] || ''}</td>`; // Culto Infantil
+                        table += `<td>${row[4] || ''}</td>`; // Ceia
+                        
+                        table += '</tr>';
+                    });
+
+                    table += '</tbody></table>';
+                    excelContainer.innerHTML = table;  // Inserir a tabela no contêiner
+                } else {
+                    excelContainer.innerHTML = 'Erro ao carregar a planilha.';
+                }
+            };
+
+            xhr.send();
+        }
+
+        // Função para verificar se a data da célula é igual à data atual
+        function isCurrentDate(formattedDate) {
+            const cellDate = new Date(formattedDate.split('/').reverse().join('/'));
+            return cellDate.toLocaleDateString('pt-BR') === currentDate.toLocaleDateString('pt-BR');
+        }
+
+        // Função para navegar até a data correspondente
+        function navigateToDate(currentDate) {
+            const targetDate = new Date(currentDate);
+            targetDate.setDate(currentDate.getDate() + (7 - currentDate.getDay()) % 7); // Proximo domingo
+
+            // Se for domingo, usa a data atual
+            if (currentDate.getDay() === 0) {
+                targetDate.setDate(currentDate.getDate());
+            }
+
+            const formattedTargetDate = targetDate.toLocaleDateString('pt-BR');
+            const rows = document.querySelectorAll('#excelContainer table tbody tr');
+
+            for (let row of rows) {
+                const cells = row.getElementsByTagName('td');
+                const dateCell = cells[0];
+                if (dateCell.textContent === formattedTargetDate) {
+                    row.scrollIntoView({ behavior: 'smooth', block: 'center' }); // Deslocar suavemente para a linha correspondente
+                    break;
+                }
+            }
+        }
+
+        function showEscalas() {
+            document.getElementById('excelContainer').classList.remove('hidden');
+            document.getElementById('redesSociais').classList.add('hidden');
+            loadExcel(); // Carrega os dados da planilha ao exibir as escalas
+        }
+
+        function showRedesSociais() {
+            document.getElementById('redesSociais').classList.remove('hidden');
+            document.getElementById('excelContainer').classList.add('hidden');
+        }
+
+        // Carregar os dados quando a página for carregada
+        window.onload = loadExcel;
+    </script>
+</body>
+</html>

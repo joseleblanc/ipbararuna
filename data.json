@@ -1,0 +1,731 @@
+{
+"Sheet1":[
+ {
+  "ESCALAS  IPB ARARUNA": "data",
+  "Column3": "Diaconia",
+  "Column4": "Cafezinho",
+  "Column5": "Culto Infantil",
+  "Column6": "ceia",
+  "Column7": "DATA DE HOJE",
+  "Column8": "QUANTIDADE DE CULTOS",
+  "Column9": "QUANTIDADE DE CEIAS"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "21-Jan",
+  "Column3": "JAIR",
+  "Column4": "NALZIRA",
+  "Column5": "LIDIA",
+  "Column6": "NAO",
+  "Column7": "10\/20\/2024",
+  "Column8": 50,
+  "Column9": 12
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "28-Jan",
+  "Column3": "JOSUE",
+  "Column4": "TEREZINHA",
+  "Column5": "EUNILDA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "04-Feb",
+  "Column3": "FERNANDO",
+  "Column4": "BETHE",
+  "Column5": "SUZANY",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "11-Feb",
+  "Column3": "JOSUE",
+  "Column4": "RENICE",
+  "Column5": "SONIA",
+  "Column6": "SIM"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "18-Feb",
+  "Column3": "JAIR",
+  "Column4": "VERA",
+  "Column5": "LIDIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "25-Feb",
+  "Column3": "JOSUE",
+  "Column4": "SONIA",
+  "Column5": "EUNILDA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "03-Mar",
+  "Column3": "FERNANDO",
+  "Column4": "EUNILDA",
+  "Column5": "SUZANY",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "10-Mar",
+  "Column3": "JAIR",
+  "Column4": "KEREN",
+  "Column5": "SONIA",
+  "Column6": "SIM"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "17-Mar",
+  "Column3": "JOSUE",
+  "Column4": "MARIANA",
+  "Column5": "LIDIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "24-Mar",
+  "Column3": "JAIR",
+  "Column4": "SUZANY",
+  "Column5": "EUNILDA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "31-Mar",
+  "Column3": "FERNANDO",
+  "Column4": "SILVANA",
+  "Column5": "SUZANY",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "07-Apr",
+  "Column3": "JOSUE",
+  "Column4": "LIDIA",
+  "Column5": "SONIA",
+  "Column6": "SIM"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "14-Apr",
+  "Column3": "FERNANDO",
+  "Column4": "IRACI",
+  "Column5": "LIDIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "21-Apr",
+  "Column3": "JAIR",
+  "Column4": "NALZIRA",
+  "Column5": "EUNILDA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "28-Apr",
+  "Column3": "FERNANDO",
+  "Column4": "TEREZINHA",
+  "Column5": "SUZANY",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "05-May",
+  "Column3": "JAIR",
+  "Column4": "BETHE",
+  "Column5": "SONIA",
+  "Column6": "SIM"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "12-May",
+  "Column3": "JOSUE",
+  "Column4": "RENICE",
+  "Column5": "LIDIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "19-May",
+  "Column3": "FERNANDO",
+  "Column4": "VERA",
+  "Column5": "EUNILDA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "26-May",
+  "Column3": "JOSUE",
+  "Column4": "SONIA",
+  "Column5": "SUZANY",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "02-Jun",
+  "Column3": "FERNANDO",
+  "Column4": "EUNILDA",
+  "Column5": "SONIA",
+  "Column6": "SIM"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "09-Jun",
+  "Column3": "JAIR",
+  "Column4": "KEREN",
+  "Column5": "LIDIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "16-Jun",
+  "Column3": "JOSUE",
+  "Column4": "MARIANA",
+  "Column5": "EUNILDA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "23-Jun",
+  "Column3": "FERNANDO",
+  "Column4": "SUZANY",
+  "Column5": "SUZANY",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "30-Jun",
+  "Column3": "JAIR",
+  "Column4": "SILVANA",
+  "Column5": "SONIA",
+  "Column6": "SIM"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "07-Jul",
+  "Column3": "JAIR",
+  "Column4": "NALZIRA",
+  "Column5": "LIDIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "14-Jul",
+  "Column3": "JOSUE",
+  "Column4": "TEREZINHA",
+  "Column5": "EUNILDA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "21-Jul",
+  "Column3": "FERNANDO",
+  "Column4": "BETHE",
+  "Column5": "SUZANY",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "28-Jul",
+  "Column3": "JOSUE",
+  "Column4": "RENICE",
+  "Column5": "SONIA",
+  "Column6": "SIM"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "04-Aug",
+  "Column3": "JAIR",
+  "Column4": "VERA",
+  "Column5": "LIDIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "11-Aug",
+  "Column3": "JOSUE",
+  "Column4": "SONIA",
+  "Column5": "EUNILDA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "18-Aug",
+  "Column3": "FERNANDO",
+  "Column4": "EUNILDA",
+  "Column5": "SUZANY",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "25-Aug",
+  "Column3": "JAIR",
+  "Column4": "KEREN",
+  "Column5": "SONIA",
+  "Column6": "SIM"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "01-Sep",
+  "Column3": "JOSUE",
+  "Column4": "MARIANA",
+  "Column5": "LIDIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "08-Sep",
+  "Column3": "JAIR",
+  "Column4": "SUZANY",
+  "Column5": "EUNILDA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "15-Sep",
+  "Column3": "FERNANDO",
+  "Column4": "SILVANA",
+  "Column5": "SUZANY",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "22-Sep",
+  "Column3": "JOSUE",
+  "Column4": "LIDIA",
+  "Column5": "SONIA",
+  "Column6": "SIM"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "29-Sep",
+  "Column3": "FERNANDO",
+  "Column4": "IRACI",
+  "Column5": "LIDIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "06-Oct",
+  "Column3": "JAIR",
+  "Column4": "NALZIRA",
+  "Column5": "EUNILDA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "13-Oct",
+  "Column3": "FERNANDO",
+  "Column4": "TEREZINHA",
+  "Column5": "SUZANY",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "20-Oct",
+  "Column3": "JAIR",
+  "Column4": "NALZIRA",
+  "Column5": "LIDIA",
+  "Column6": "SIM"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "27-Oct",
+  "Column3": "JOSUE",
+  "Column4": "TEREZINHA",
+  "Column5": "EUNILDA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "03-Nov",
+  "Column3": "FERNANDO",
+  "Column4": "BETHE",
+  "Column5": "SUZANY",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "10-Nov",
+  "Column3": "JOSUE",
+  "Column4": "RENICE",
+  "Column5": "SONIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "17-Nov",
+  "Column3": "JAIR",
+  "Column4": "VERA",
+  "Column5": "LIDIA",
+  "Column6": "SIM"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "24-Nov",
+  "Column3": "JOSUE",
+  "Column4": "SONIA",
+  "Column5": "EUNILDA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "01-Dec",
+  "Column3": "FERNANDO",
+  "Column4": "EUNILDA",
+  "Column5": "SUZANY",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "08-Dec",
+  "Column3": "JAIR",
+  "Column4": "KEREN",
+  "Column5": "SONIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "15-Dec",
+  "Column3": "JOSUE",
+  "Column4": "MARIANA",
+  "Column5": "LIDIA",
+  "Column6": "SIM"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "22-Dec",
+  "Column3": "JAIR",
+  "Column4": "NALZIRA",
+  "Column5": "LIDIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "29-Dec",
+  "Column3": "JOSUE",
+  "Column4": "TEREZINHA",
+  "Column5": "EUNILDA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "05-Jan",
+  "Column3": "FERNANDO",
+  "Column4": "EUNILDA",
+  "Column5": "SUZANY",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "12-Jan",
+  "Column3": "JAIR",
+  "Column4": "KEREN",
+  "Column5": "SONIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "19-Jan",
+  "Column3": "JOSUE",
+  "Column4": "MARIANA",
+  "Column5": "LIDIA",
+  "Column6": "SIM"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "26-Jan",
+  "Column3": "JAIR",
+  "Column4": "NALZIRA",
+  "Column5": "LIDIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "02-Feb",
+  "Column3": "JOSUE",
+  "Column4": "TEREZINHA",
+  "Column5": "EUNILDA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "09-Feb",
+  "Column3": "FERNANDO",
+  "Column4": "EUNILDA",
+  "Column5": "SUZANY",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "16-Feb",
+  "Column3": "JAIR",
+  "Column4": "KEREN",
+  "Column5": "SONIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "23-Feb",
+  "Column3": "JOSUE",
+  "Column4": "MARIANA",
+  "Column5": "LIDIA",
+  "Column6": "SIM"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "02-Mar",
+  "Column3": "JAIR",
+  "Column4": "NALZIRA",
+  "Column5": "LIDIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "09-Mar",
+  "Column3": "JOSUE",
+  "Column4": "TEREZINHA",
+  "Column5": "EUNILDA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "16-Mar",
+  "Column3": "FERNANDO",
+  "Column4": "EUNILDA",
+  "Column5": "SUZANY",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "23-Mar",
+  "Column3": "JAIR",
+  "Column4": "KEREN",
+  "Column5": "SONIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "30-Mar",
+  "Column3": "JOSUE",
+  "Column4": "MARIANA",
+  "Column5": "LIDIA",
+  "Column6": "SIM"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "06-Apr",
+  "Column3": "JAIR",
+  "Column4": "NALZIRA",
+  "Column5": "LIDIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "13-Apr",
+  "Column3": "JOSUE",
+  "Column4": "TEREZINHA",
+  "Column5": "EUNILDA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "20-Apr",
+  "Column3": "FERNANDO",
+  "Column4": "EUNILDA",
+  "Column5": "SUZANY",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "27-Apr",
+  "Column3": "JAIR",
+  "Column4": "KEREN",
+  "Column5": "SONIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "04-May",
+  "Column3": "JOSUE",
+  "Column4": "MARIANA",
+  "Column5": "LIDIA",
+  "Column6": "SIM"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "11-May",
+  "Column3": "JAIR",
+  "Column4": "NALZIRA",
+  "Column5": "LIDIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "18-May",
+  "Column3": "JOSUE",
+  "Column4": "TEREZINHA",
+  "Column5": "EUNILDA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "25-May",
+  "Column3": "FERNANDO",
+  "Column4": "EUNILDA",
+  "Column5": "SUZANY",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "01-Jun",
+  "Column3": "JAIR",
+  "Column4": "KEREN",
+  "Column5": "SONIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "08-Jun",
+  "Column3": "JOSUE",
+  "Column4": "MARIANA",
+  "Column5": "LIDIA",
+  "Column6": "SIM"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "15-Jun",
+  "Column3": "JAIR",
+  "Column4": "NALZIRA",
+  "Column5": "LIDIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "22-Jun",
+  "Column3": "JOSUE",
+  "Column4": "TEREZINHA",
+  "Column5": "EUNILDA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "29-Jun",
+  "Column3": "FERNANDO",
+  "Column4": "EUNILDA",
+  "Column5": "SUZANY",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "06-Jul",
+  "Column3": "JAIR",
+  "Column4": "KEREN",
+  "Column5": "SONIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "13-Jul",
+  "Column3": "JOSUE",
+  "Column4": "MARIANA",
+  "Column5": "LIDIA",
+  "Column6": "SIM"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "20-Jul",
+  "Column3": "JAIR",
+  "Column4": "NALZIRA",
+  "Column5": "LIDIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "27-Jul",
+  "Column3": "JOSUE",
+  "Column4": "TEREZINHA",
+  "Column5": "EUNILDA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "03-Aug",
+  "Column3": "FERNANDO",
+  "Column4": "EUNILDA",
+  "Column5": "SUZANY",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "10-Aug",
+  "Column3": "JAIR",
+  "Column4": "KEREN",
+  "Column5": "SONIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "17-Aug",
+  "Column3": "JOSUE",
+  "Column4": "MARIANA",
+  "Column5": "LIDIA",
+  "Column6": "SIM"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "24-Aug",
+  "Column3": "JAIR",
+  "Column4": "NALZIRA",
+  "Column5": "LIDIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "31-Aug",
+  "Column3": "JOSUE",
+  "Column4": "TEREZINHA",
+  "Column5": "EUNILDA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "07-Sep",
+  "Column3": "FERNANDO",
+  "Column4": "EUNILDA",
+  "Column5": "SUZANY",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "14-Sep",
+  "Column3": "JAIR",
+  "Column4": "KEREN",
+  "Column5": "SONIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "21-Sep",
+  "Column3": "JOSUE",
+  "Column4": "MARIANA",
+  "Column5": "LIDIA",
+  "Column6": "SIM"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "28-Sep",
+  "Column3": "JAIR",
+  "Column4": "NALZIRA",
+  "Column5": "LIDIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "05-Oct",
+  "Column3": "JOSUE",
+  "Column4": "TEREZINHA",
+  "Column5": "EUNILDA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "12-Oct",
+  "Column3": "FERNANDO",
+  "Column4": "EUNILDA",
+  "Column5": "SUZANY",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "19-Oct",
+  "Column3": "JAIR",
+  "Column4": "KEREN",
+  "Column5": "SONIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "26-Oct",
+  "Column3": "JOSUE",
+  "Column4": "MARIANA",
+  "Column5": "LIDIA",
+  "Column6": "SIM"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "02-Nov",
+  "Column3": "JAIR",
+  "Column4": "NALZIRA",
+  "Column5": "LIDIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "09-Nov",
+  "Column3": "JOSUE",
+  "Column4": "TEREZINHA",
+  "Column5": "EUNILDA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "16-Nov",
+  "Column3": "FERNANDO",
+  "Column4": "EUNILDA",
+  "Column5": "SUZANY",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "23-Nov",
+  "Column3": "JAIR",
+  "Column4": "KEREN",
+  "Column5": "SONIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "30-Nov",
+  "Column3": "JOSUE",
+  "Column4": "MARIANA",
+  "Column5": "LIDIA",
+  "Column6": "SIM"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "07-Dec",
+  "Column3": "JAIR",
+  "Column4": "NALZIRA",
+  "Column5": "LIDIA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "14-Dec",
+  "Column3": "JOSUE",
+  "Column4": "TEREZINHA",
+  "Column5": "EUNILDA",
+  "Column6": "NAO"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "21-Dec",
+  "Column3": "FERNANDO",
+  "Column4": "EUNILDA",
+  "Column5": "SUZANY",
+  "Column6": "SIM"
+ },
+ {
+  "ESCALAS  IPB ARARUNA": "28-Dec",
+  "Column3": "FERNANDO",
+  "Column4": "EUNILDA",
+  "Column5": "SUZANY",
+  "Column6": "NAO"
+ }
+]
+}
