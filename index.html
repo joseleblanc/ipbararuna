@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IPB ARARUNA</title>
     <link rel="icon" href="favicon.png" type="image/png"> <!-- Link para o favicon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -49,12 +50,6 @@
             text-align: center;
             color: #333;
         }
-        #navegar {
-            color: #1E88E5; /* Azul */
-            text-decoration: underline;
-            cursor: pointer;
-            margin-left: 10px;
-        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -90,6 +85,38 @@
         .hidden {
             display: none;
         }
+        .redes-sociais {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .redes-sociais a {
+            margin: 0 10px;
+            padding: 10px 15px; /* Padding adicionado para melhorar a aparência */
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            display: flex;
+            align-items: center; /* Alinha o ícone e o texto verticalmente */
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .redes-sociais a.facebook {
+            background-color: #3b5998; /* Cor do Facebook */
+        }
+        .redes-sociais a.instagram {
+            background-color: #e4405f; /* Cor do Instagram */
+        }
+        .redes-sociais a.whatsapp {
+            background-color: #25D366; /* Cor do WhatsApp */
+        }
+        .redes-sociais a:hover {
+            opacity: 0.8;
+            transform: translateY(-2px); /* Efeito de levitação ao passar o mouse */
+        }
+        .redes-sociais i {
+            margin-right: 5px; /* Espaço entre ícone e texto */
+        }
     </style>
 </head>
 <body>
@@ -103,9 +130,11 @@
         <!-- A tabela será inserida aqui dinamicamente -->
     </div>
     <div id="redesSociais" class="hidden">
-        <h2>Redes Sociais</h2>
-        <p>Aqui você pode colocar informações sobre suas redes sociais.</p>
-        <!-- Adicione mais conteúdo sobre redes sociais conforme necessário -->
+        <div class="redes-sociais">
+            <a href="https://facebook.com" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://instagram.com" target="_blank" class="instagram"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://wa.me/1234567890" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
@@ -141,9 +170,8 @@
                     // Definindo a data atual
                     currentDate = new Date();
                     const currentDateFormatted = currentDate.toLocaleDateString('pt-BR'); // Formato: dd/mm/yyyy
-                    dataAtualDiv.innerHTML = `Data Atual: ${currentDateFormatted} <span id="navegar">Navegar até a data de hoje</span>`;
-                    document.getElementById('navegar').onclick = () => navigateToDate(currentDate); // Adiciona evento de clique
-
+                    dataAtualDiv.innerHTML = `Data Atual: ${currentDateFormatted}`;
+                    
                     // Criar a tabela HTML dinamicamente
                     let table = '<table>';
                     table += '<thead><tr>';
@@ -186,48 +214,24 @@
             xhr.send();
         }
 
-        // Função para verificar se a data da célula é igual à data atual
+        // Função para verificar se a data da célula é a data atual
         function isCurrentDate(formattedDate) {
-            const cellDate = new Date(formattedDate.split('/').reverse().join('/'));
-            return cellDate.toLocaleDateString('pt-BR') === currentDate.toLocaleDateString('pt-BR');
+            const currentDateFormatted = currentDate.toLocaleDateString('pt-BR');
+            return formattedDate === currentDateFormatted; // Compara a data formatada
         }
 
-        // Função para navegar até a data correspondente
-        function navigateToDate(currentDate) {
-            const targetDate = new Date(currentDate);
-            targetDate.setDate(currentDate.getDate() + (7 - currentDate.getDay()) % 7); // Proximo domingo
-
-            // Se for domingo, usa a data atual
-            if (currentDate.getDay() === 0) {
-                targetDate.setDate(currentDate.getDate());
-            }
-
-            const formattedTargetDate = targetDate.toLocaleDateString('pt-BR');
-            const rows = document.querySelectorAll('#excelContainer table tbody tr');
-
-            for (let row of rows) {
-                const cells = row.getElementsByTagName('td');
-                const dateCell = cells[0];
-                if (dateCell.textContent === formattedTargetDate) {
-                    row.scrollIntoView({ behavior: 'smooth', block: 'center' }); // Deslocar suavemente para a linha correspondente
-                    break;
-                }
-            }
-        }
-
+        // Função para mostrar as escalas
         function showEscalas() {
-            document.getElementById('excelContainer').classList.remove('hidden');
             document.getElementById('redesSociais').classList.add('hidden');
-            loadExcel(); // Carrega os dados da planilha ao exibir as escalas
+            document.getElementById('excelContainer').classList.remove('hidden');
+            loadExcel(); // Carrega os dados da planilha
         }
 
+        // Função para mostrar as redes sociais
         function showRedesSociais() {
-            document.getElementById('redesSociais').classList.remove('hidden');
             document.getElementById('excelContainer').classList.add('hidden');
+            document.getElementById('redesSociais').classList.remove('hidden');
         }
-
-        // Carregar os dados quando a página for carregada
-        window.onload = loadExcel;
     </script>
 </body>
 </html>
