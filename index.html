@@ -78,9 +78,13 @@
         .sim {
             background-color: #4CAF50;
         }
-        .highlight {
-            background-color: #eb7c2d; /* Laranja */
-            color: white; /* Texto em branco */
+        .blink {
+            animation: blink 1s linear infinite; /* Efeito de piscar */
+        }
+        @keyframes blink {
+            0% { background-color: transparent; }
+            50% { background-color: yellow; }
+            100% { background-color: transparent; }
         }
         .hidden {
             display: none;
@@ -184,7 +188,7 @@
                         const formattedDate = formatExcelDate(row[0]) || '';
                         const isCurrent = isCurrentDate(formattedDate);
 
-                        table += `<tr class="${rowClass} ${isCurrent ? 'highlight' : ''}">`;
+                        table += `<tr class="${rowClass} ${isCurrent ? 'blink' : ''}">`;
 
                         table += `<td>${formattedDate}</td>`;
                         table += `<td>${row[1] || ''}</td>`;
@@ -229,9 +233,9 @@
                 const dateCell = row.cells[0].textContent; // A data está na primeira coluna
                 if (dateCell === currentDateFormatted) {
                     row.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    row.classList.add('highlight');
+                    row.classList.add('blink'); // Adiciona a classe de animação
                 } else {
-                    row.classList.remove('highlight');
+                    row.classList.remove('blink'); // Remove a classe de animação das outras linhas
                 }
             });
         }
