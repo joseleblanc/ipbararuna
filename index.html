@@ -26,6 +26,7 @@
         .menu {
             display: flex;
             justify-content: center;
+            align-items: center; /* Alinha verticalmente */
             margin-bottom: 20px;
         }
         .menu button {
@@ -79,7 +80,7 @@
             background-color: #4CAF50;
         }
         .blink {
-            animation: blink 1s linear infinite; /* Efeito de piscar */
+            animation: blink 1s linear infinite;
         }
         @keyframes blink {
             0% { background-color: transparent; }
@@ -121,6 +122,10 @@
         .redes-sociais i {
             margin-right: 5px;
         }
+        .banner {
+            margin-left: 20px; /* Espaço entre o botão e a imagem */
+            max-width: 200px; /* Ajuste o tamanho conforme necessário */
+        }
     </style>
 </head>
 <body>
@@ -129,6 +134,7 @@
         <button onclick="showEscalas()">Escalas</button>
         <button onclick="showRedesSociais()">Redes Sociais</button>
         <button onclick="highlightCurrentDate()">Ir até Data Atual</button>
+        <img src="banner.png" alt="Banner" class="banner"> <!-- Adicionando a imagem aqui -->
     </div>
     <div id="dataAtual"></div>
     <div id="excelContainer" class="hidden"></div>
@@ -230,12 +236,12 @@
             const currentDateFormatted = currentDate.toLocaleDateString('pt-BR');
 
             rows.forEach(row => {
-                const dateCell = row.cells[0].textContent; // A data está na primeira coluna
+                const dateCell = row.cells[0].textContent;
                 if (dateCell === currentDateFormatted) {
                     row.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    row.classList.add('blink'); // Adiciona a classe de animação
+                    row.classList.add('blink');
                 } else {
-                    row.classList.remove('blink'); // Remove a classe de animação das outras linhas
+                    row.classList.remove('blink');
                 }
             });
         }
