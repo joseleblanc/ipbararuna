@@ -12,7 +12,7 @@
             background-color: #ffffff;
             margin: 0;
             padding: 20px;
-            color: #ffa500;
+            color: #333333;
         }
         h1 {
             text-align: center;
@@ -26,7 +26,7 @@
         .menu {
             display: flex;
             justify-content: center;
-            align-items: center; /* Alinha verticalmente */
+            align-items: center;
             margin-bottom: 20px;
         }
         .menu button {
@@ -55,37 +55,37 @@
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
-            font-size: 14px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            font-size: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             overflow: hidden;
+            background: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
+            border: 3px solid #eb7c2d; /* Borda mais grossa em laranja */
         }
         th, td {
-            border: 1px solid #d0d0d0;
+            border: 1px solid #eb7c2d; /* Borda mais fina em laranja para cada célula */
             padding: 12px;
-            text-align: left;
+            text-align: center;
+            font-weight: normal;
+            color: #333;
         }
         th {
-            background-color: #4CAF50;
-            color: white;
+            background-color: #d9d9d9;
+            color: #333;
             font-weight: bold;
         }
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
+        td {
+            background-color: #f5f5f5;
         }
-        tr:hover {
-            background-color: #eaeaea;
+        tr.blink td {
+            animation: pulse 2s infinite alternate;
         }
-        .sim {
-            background-color: #4CAF50;
+        @keyframes pulse {
+            0% { background-color: #ffecd9; color: #d65a00; }
+            100% { background-color: #ffd1a3; color: #b34900; }
         }
-        .blink {
-            animation: blink 1s linear infinite;
-        }
-        @keyframes blink {
-            0% { background-color: transparent; }
-            50% { background-color: yellow; }
-            100% { background-color: transparent; }
+        tr:hover td {
+            background-color: #e8e8e8;
         }
         .hidden {
             display: none;
@@ -130,7 +130,6 @@
         <button onclick="showEscalas()">Escalas</button>
         <button onclick="showRedesSociais()">Redes Sociais</button>
         <button onclick="highlightCurrentDate()">Ir até Data Atual</button>
-        
     </div>
     <div id="dataAtual"></div>
     <div id="excelContainer" class="hidden"></div>
@@ -184,20 +183,15 @@
                     table += '</tr></thead><tbody>';
 
                     jsonData.slice(1).forEach((row) => {
-                        const isSimRow = row.some(cell => cell === 'SIM');
-                        const rowClass = isSimRow ? 'sim' : '';
-
                         const formattedDate = formatExcelDate(row[0]) || '';
                         const isCurrent = isCurrentDate(formattedDate);
 
-                        table += `<tr class="${rowClass} ${isCurrent ? 'blink' : ''}">`;
-
+                        table += `<tr class="${isCurrent ? 'blink' : ''}">`;
                         table += `<td>${formattedDate}</td>`;
                         table += `<td>${row[1] || ''}</td>`;
                         table += `<td>${row[2] || ''}</td>`;
                         table += `<td>${row[3] || ''}</td>`;
                         table += `<td>${row[4] || ''}</td>`;
-                        
                         table += '</tr>';
                     });
 
