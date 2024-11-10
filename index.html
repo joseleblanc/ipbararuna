@@ -99,6 +99,10 @@
         tr.blink td {
             animation: pulse 2s infinite alternate;
         }
+        tr.highlight td {
+            background-color: #ffecd9;
+            color: #d65a00;
+        }
         @keyframes pulse {
             0% { background-color: #ffecd9; color: #d65a00; }
             100% { background-color: #ffd1a3; color: #b34900; }
@@ -165,7 +169,7 @@
             <option value="endereco">Endereço</option>
         </select>
         <div class="button-container" id="buttonContainer">
-            <button onclick="highlightCurrentDate()">Ir até Data Atual</button>
+            <button onclick="highlightNextSunday()">Ir até o Próximo Domingo</button>
         </div>
     </div>
     <div id="dataAtual"></div>
@@ -193,16 +197,32 @@
     <script>
         let jsonData = [];
         let currentDate;
+        let nextSundayDate;
 
+        // Função para formatar a data no formato 'dd/mm/yyyy'
         function formatExcelDate(excelDate) {
             const date = new Date((excelDate - (25567 + 1)) * 86400 * 1000);
             return date.toLocaleDateString('pt-BR');
         }
 
+        // Função para calcular o próximo domingo
+        function getNextSunday() {
+            const today = new Date();
+            const nextSunday = new Date(today);
+            // Se hoje for domingo (getDay() == 0), adiciona 7 dias
+            if (today.getDay() === 0) {
+                nextSunday.setDate(today.getDate() + 7);
+            } else {
+                nextSunday.setDate(today.getDate() + (7 - today.getDay())); // Calcula o próximo domingo
+            }
+            return nextSunday.toLocaleDateString('pt-BR'); // Retorna a data formatada
+        }
+
+        // Função para carregar os dados da planilha
         function loadExcel() {
             const excelContainer = document.getElementById('excelContainer');
             const dataAtualDiv = document.getElementById('dataAtual');
-            const filePath = 'Book1.xlsx';
+            const filePath = 'Book1.xlsx'; // Caminho da planilha
 
             const xhr = new XMLHttpRequest();
             xhr.open('GET', filePath, true);
@@ -221,10 +241,13 @@
                     const currentDateFormatted = currentDate.toLocaleDateString('pt-BR');
                     dataAtualDiv.innerHTML = `Data Atual: ${currentDateFormatted}`;
 
+                    // Define o próximo domingo
+                    nextSundayDate = getNextSunday();
+
                     let table = '<table>';
                     table += '<thead><tr>';
 
-                    const headers = ['Data', 'Diaconia', ' Cafezinho', 'Culto Infantil', 'Ceia'];
+                    const headers = ['Data', 'Diaconia', ' Cafezinho', 'Culto Infantil']; // Removido 'Ceia'
                     headers.forEach(header => {
                         table += `<th>${header}</th>`;
                     });
@@ -232,14 +255,18 @@
 
                     jsonData.slice(1).forEach((row) => {
                         const formattedDate = formatExcelDate(row[0]) || '';
-                        const isCurrent = isCurrentDate(formattedDate);
 
-                        table += `<tr class="${isCurrent ? 'blink' : ''}">`;
+                        // Verifica se a data é inválida (Invalid Date) e pula essa linha
+                        if (formattedDate === 'Invalid Date' || !formattedDate) return;
+
+                        const isNextSunday = formattedDate === nextSundayDate; // Verifica se é o próximo domingo
+                        const isCurrent = formattedDate === currentDateFormatted;
+
+                        table += `<tr class="${isNextSunday ? 'blink' : ''} ${isCurrent ? 'highlight' : ''}">`;
                         table += `<td>${formattedDate}</td>`;
                         table += `<td>${row[1] || ''}</td>`;
                         table += `<td>${row[2] || ''}</td>`;
                         table += `<td>${row[3] || ''}</td>`;
-                        table += `<td>${row[4] || ''}</td>`;
                         table += '</tr>';
                     });
 
@@ -253,59 +280,55 @@
             xhr.send();
         }
 
-        function isCurrentDate(formattedDate) {
-            const currentDateFormatted = currentDate.toLocaleDateString('pt-BR');
-            return formattedDate === currentDateFormatted;
-        }
-
-        function showEscalas() {
-            document.getElementById('redesSociais').classList.add('hidden');
-            document.getElementById('endereco').classList.add('hidden'); // Esconder endereço
-            document.getElementById('banner').style.display = 'none'; // Esconder banner
-            document.getElementById('excelContainer').classList.remove('hidden');
-            loadExcel();
-            document.getElementById('buttonContainer').style.display = 'block'; // Mostrar botão
-        }
-
-        function showRedesSociais() {
-            document.getElementById('excelContainer').classList.add('hidden');
-            document.getElementById('redesSociais').classList.remove('hidden');
-            document.getElementById('endereco').classList.add('hidden'); // Esconder endereço
-            document.getElementById('banner').style.display = 'none'; // Esconder banner
-            document.getElementById('buttonContainer').style.display = 'none'; // Esconder botão
-        }
-
-        function showHorarios() {
-            document.getElementById('excelContainer').classList.add('hidden');
-            document.getElementById('redesSociais').classList.add('hidden');
-            document.getElementById('endereco').classList.add('hidden'); // Esconder endereço
-            document.getElementById('banner').style.display = 'block'; // Mostrar banner
-            document.getElementById('buttonContainer').style.display = 'none'; // Esconder botão
-        }
-
-        function showEndereco() {
-            document.getElementById('excelContainer').classList.add('hidden');
-            document.getElementById('redesSociais').classList.add('hidden');
-            document.getElementById('banner').style.display = 'none'; // Esconder banner
-            document.getElementById('buttonContainer').style.display = 'none'; // Esconder botão
-            document.getElementById('endereco').classList.remove('hidden'); // Mostrar endereço
-        }
-
-        function highlightCurrentDate() {
+        // Função para destacar o próximo domingo
+        function highlightNextSunday() {
             const rows = document.querySelectorAll('#excelContainer table tbody tr');
-            const currentDateFormatted = currentDate.toLocaleDateString('pt-BR');
-
             rows.forEach(row => {
                 const dateCell = row.cells[0].textContent;
-                if (dateCell === currentDateFormatted) {
+                if (dateCell === nextSundayDate) {
                     row.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    row.classList.add('blink');
+                    row.classList.add('blink'); // Destaque visual para o próximo domingo
                 } else {
                     row.classList.remove('blink');
                 }
             });
         }
 
+        // Funções para exibir diferentes seções
+        function showEscalas() {
+            document.getElementById('redesSociais').classList.add('hidden');
+            document.getElementById('endereco').classList.add('hidden');
+            document.getElementById('banner').style.display = 'none';
+            document.getElementById('excelContainer').classList.remove('hidden');
+            loadExcel();
+            document.getElementById('buttonContainer').style.display = 'block';
+        }
+
+        function showRedesSociais() {
+            document.getElementById('excelContainer').classList.add('hidden');
+            document.getElementById('redesSociais').classList.remove('hidden');
+            document.getElementById('endereco').classList.add('hidden');
+            document.getElementById('banner').style.display = 'none';
+            document.getElementById('buttonContainer').style.display = 'none';
+        }
+
+        function showHorarios() {
+            document.getElementById('excelContainer').classList.add('hidden');
+            document.getElementById('redesSociais').classList.add('hidden');
+            document.getElementById('endereco').classList.add('hidden');
+            document.getElementById('banner').style.display = 'block';
+            document.getElementById('buttonContainer').style.display = 'none';
+        }
+
+        function showEndereco() {
+            document.getElementById('excelContainer').classList.add('hidden');
+            document.getElementById('redesSociais').classList.add('hidden');
+            document.getElementById('banner').style.display = 'none';
+            document.getElementById('buttonContainer').style.display = 'none';
+            document.getElementById('endereco').classList.remove('hidden');
+        }
+
+        // Função que gerencia as opções selecionadas no menu
         function handleMenuChange() {
             const menuSelect = document.getElementById('menuSelect');
             const selectedValue = menuSelect.value;
